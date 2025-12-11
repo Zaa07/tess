@@ -1,0 +1,39 @@
+{
+  "name": "vita-bot",
+  "version": "1.7.0",
+  "description": "bot WhatsApp by vita 2 0 2 5",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index --pairing"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Novi6182"
+  },
+  "keywords": [],
+  "author": "vitaa",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Novi6182"
+  },
+  "homepage": "https://github.com/Novi6182",
+  "dependencies": {
+    "@distube/ytdl-core": "^4.16.5",
+    "@whiskeysockets/baileys": "^7.0.0-rc.3",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.8.2",
+    "chalk": "^5.6.2",
+    "cheerio": "^0.22.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.2",
+    "jimp": "^1.6.0",
+    "jsdom": "^26.0.0",
+    "moment-timezone": "^0.5.47",
+    "node-fetch": "^2.7.0",
+    "node-webpmux": "^3.2.0",
+    "request": "^2.88.2",
+    "ruhend-scraper": "^9.0.0",
+    "yt-search": "^2.12.1"
+  }
+}

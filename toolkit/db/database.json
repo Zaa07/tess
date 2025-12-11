@@ -1,0 +1,134 @@
+{
+  "Private": {
+    "tya": {
+      "Nomor": "628386877368@s.whatsapp.net",
+      "noId": "dqjevky22",
+      "autoai": false,
+      "bell": false,
+      "cmd": 47,
+      "claim": false,
+      "ban": false,
+      "money": {
+        "amount": 300000
+      },
+      "isPremium": {
+        "isPrem": false,
+        "time": 0
+      },
+      "afk": {}
+    },
+    "والي أج": {
+      "Nomor": "6282171697692@s.whatsapp.net",
+      "noId": "pnlbnsd72",
+      "autoai": false,
+      "bell": false,
+      "cmd": 14,
+      "claim": false,
+      "ban": false,
+      "money": {
+        "amount": 300000
+      },
+      "isPremium": {
+        "isPrem": false,
+        "time": 0
+      },
+      "afk": {}
+    },
+    "𝗓𝗂𝗍𝖺 𝗂𝗆𝗎𝗉": {
+      "Nomor": "151630213312534@lid",
+      "noId": "xmywnlx49",
+      "autoai": false,
+      "bell": false,
+      "cmd": 42,
+      "claim": false,
+      "ban": false,
+      "money": {
+        "amount": 300000
+      },
+      "isPremium": {
+        "isPrem": false,
+        "time": 0
+      },
+      "afk": {}
+    },
+    "Rellzz": {
+      "Nomor": "6281226729389@s.whatsapp.net",
+      "noId": "mekppem6",
+      "autoai": false,
+      "bell": false,
+      "cmd": 4,
+      "claim": false,
+      "ban": false,
+      "money": {
+        "amount": 300000
+      },
+      "isPremium": {
+        "isPrem": false,
+        "time": 0
+      },
+      "afk": {}
+    }
+  },
+  "Grup": {
+    "group gabut": {
+      "Id": "120363419767889224@g.us",
+      "autoai": false,
+      "bell": false,
+      "mute": false,
+      "setWarn": 0,
+      "gbFilter": {
+        "Welcome": {
+          "welcome": false,
+          "welcomeText": ""
+        },
+        "Left": {
+          "gcLeft": false,
+          "leftText": ""
+        },
+        "link": {
+          "antilink": true,
+          "setlink": ""
+        },
+        "stiker": {
+          "antistiker": true
+        },
+        "antibot": false,
+        "antiTagSw": false
+      },
+      "antibadword": {
+        "badword": false,
+        "badwordText": ""
+      }
+    },
+    "ㅤ۫ ០⃘០ 𝗺ֺ𝗮ֺ𝗯𝗮ֺ𝗿 𝗺ֺ𝗼𝗯𝗶𝗹𝗲ׅ 𝗹𝗲ׅ𝗴ֺ𝗲ׅ𝗻𝗱𝘀⤸": {
+      "Id": "120363315282193217@g.us",
+      "autoai": false,
+      "bell": false,
+      "mute": false,
+      "setWarn": 0,
+      "gbFilter": {
+        "Welcome": {
+          "welcome": true,
+          "welcomeText": ""
+        },
+        "Left": {
+          "gcLeft": false,
+          "leftText": ""
+        },
+        "link": {
+          "antilink": true,
+          "setlink": ""
+        },
+        "stiker": {
+          "antistiker": false
+        },
+        "antibot": false,
+        "antiTagSw": true
+      },
+      "antibadword": {
+        "badword": false,
+        "badwordText": ""
+      }
+    }
+  }
+}

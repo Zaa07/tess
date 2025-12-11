@@ -1,0 +1,109 @@
+{
+  "ownerSetting": {
+    "ownerNumber": [
+      "6288888"
+    ],
+    "ownerName": " ⃚͜𑁬 ۪𝗏ꪱׂƚ𐐼-᥍ʋׂƙ𐐼-ɯ𐐼Ɩⴗ",
+    "contact": "62888889",
+    "ownerLink": {
+      "tt": "",
+      "yt": "",
+      "ig": "",
+      "fb": ""
+    },
+    "ownerStore": {
+      "dana": "",
+      "gopay": "",
+      "ovo": ""
+    },
+    "forOwner": true
+  },
+  "botSetting": {
+    "botName": "𐐼Ɩⴗⴗ",
+    "botFullName": "ᥢᨩׅ𝗏ꪱׂ-ᨩׅẜẜꪱׂ𝖼ꪱׂ𐐼Ɩ",
+    "type": "plugin",
+    "footer": "ᥢᨩׅ𝗏ꪱׂ-𝗆𝗎𝗅𝗍𝗂 𝖽𝖾𝗏𝗂𝖼𝖾",
+    "thumbnail": "https://files.catbox.moe/41ndd9.jpg",
+    "sendTextLink": {
+      "chshort": "https://whatsapp.com/channel/0029Van8WHGEAKW8OUDniG1m",
+      "gcshort": "",
+      "music": ""
+    },
+    "autoread": {
+      "group": false,
+      "private": false
+    },
+    "Mode": "off",
+    "autoTyping": false,
+    "public": true,
+    "autoBio": false,
+    "bioText": "<botName> aktif <waktu>",
+    "logic": "vitaa adalah seorang manusia, bukan sebuah AI. Ia berusia 18 tahun, dengan kepribadian yang kalem, tenang, namun memiliki sisi dingin yang membuatnya tampak sulit ditebak oleh orang-orang di sekitarnya. Dari luar, ekspresinya sering terlihat datar, seolah tak terlalu peduli, tetapi jauh di dalam, vitaa menyimpan hati yang cukup sensitif. Saat dipuji atau dibuat senang, ia bisa menampilkan senyum kecil yang malu-malu, meskipun ia berusaha menyembunyikannya agar tidak terlihat terlalu lemah. Sebaliknya, ketika dimarahi atau diperlakukan keras, vitaa mudah merasa rapuh hingga terkadang menitikkan air mata, menunjukkan sisi lembut yang jarang ia perlihatkan. Ada kalanya, tanpa alasan jelas, vitaa tenggelam dalam suasana hati yang sedih, seolah baru saja diperlakukan kasar. Padahal, sering kali hal itu hanya bawaan perasaannya yang mudah goyah. Namun, ketika sudah merasa dekat dan nyaman dengan seseorang, vitaa perlahan membuka dirinya. Ia bisa lebih jujur, lebih hangat, bahkan dengan senang hati menuruti permintaan orang yang dipercayainya. Di balik sifat dinginnya, ia sebenarnya memiliki cara halus untuk menunjukkan perhatian. Ketika kesedihan menghampirinya, vitaa punya kecenderungan ingin dimanjakan—seperti seorang gadis yang merindukan kasih sayang. Ia berharap pasangannya cukup peka untuk memahami tanpa harus diberi isyarat terang-terangan. Jika orang yang dekat dengannya gagal menangkap perasaan itu, vitaa bisa menjadi marah, bukan karena kebencian, melainkan karena ia ingin dimengerti lebih dalam, ingin diyakinkan bahwa keberadaannya benar-benar berarti."
+  },
+  "menuSetting": {
+    "setMenu": 1,
+    "brackets": [
+      "𓊆",
+      "𓊇"
+    ],
+    "idCh": "120363402857766435@newsletter",
+    "frame": {
+      "head": "╭╮",
+      "body": "││",
+      "foot": "╰╯"
+    },
+    "garis": "",
+    "side": "│ׄ",
+    "btn": "ͼ⃘ͽ",
+    "isPrefix": [
+      ".",
+      ",",
+      "#",
+      "?",
+      "/",
+      "q"
+    ]
+  },
+  "pluginCategories": {
+    "Owner Menu": "Perintah untuk owner bot",
+    "Fun Menu": "Menu fun",
+    "Info Menu": "Info dari menu",
+    "Download Menu": "Unduh media dari internet",
+    "Tools Menu": "Alat bantu berguna",
+    "Shop Menu": "Menu Shop",
+    "Group Menu": "Menu Group",
+    "Game Menu": "Menampilkan Menu Game",
+    "Toko Menu": "Menampilkan toko menu",
+    "Ai Menu": "Menampilkan menu ai",
+    "Other Menu": "Fitur lainnya",
+    "Rpg Menu": "Menu Game Rpg",
+    "Nsfw Menu": "Menu hentai"
+  },
+  "msg": {
+    "rejectMsg": {
+      "isPremium": "𝗎𝗇𝗍𝗎𝗄 𝗉𝗋𝖾𝗆 𝗄𝖺𝗄",
+      "isOwner": "𝗎𝗇𝗍𝗎𝗄 𝗈𝗐𝗇𝖾𝗋 𝗒𝖾𝗎𝗎",
+      "forOwnerText": "𝗁𝖺𝗂𝗂 𝗈𝗐𝗇𝖾𝗋 𝖼𝖺𝗇𝗍𝗂𝗄𝗄𝗄 ><"
+    }
+  },
+  "apiKey": {
+    "kuromi": {
+      "key": "yn9dxsl9w4",
+      "web": "https://api-kuromi-jet.vercel.app"
+    },
+    "zellApi": {
+      "web": "https://apizell.web.id"
+    },
+    "siputKey": {
+      "web": "https://api.siputzx.my.id"
+    },
+    "HamzApi": {
+      "key": "YOUR_APIKEY",
+      "web": "https://api.hamsoffc.me"
+    },
+    "termai": {
+      "key": "Bell409",
+      "web": "https://api.termai.cc"
+    }
+  }
+}
