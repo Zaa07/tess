@@ -1,58 +1,93 @@
-import fs from 'fs';
-import path from 'path';
-import https from 'https';
-import { fork } from 'child_process';
-import { fileURLToPath, pathToFileURL } from 'url';
+import fs from "fs";
+import path from "path";
+import https from "https";
+import { fork } from "child_process";
+import { fileURLToPath, pathToFileURL } from "url";
 
-console.log('Starting...\n');
+// Tampilkan startup banner
+console.log("Starting...\n");
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url)),
-      licensePath = path.join(__dirname, 'LICENSE');
+// Set dirname
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-fs.existsSync(licensePath)
-  ? console.log(fs.readFileSync(licensePath, 'utf8') + '\n')
-  : (console.log('LICENSE tidak ditemukan.'), setInterval(() => {}, 1e3));
+// Tampilkan LICENSE kalau ada
+const licensePath = path.join(__dirname, "LICENSE");
+if (fs.existsSync(licensePath)) {
+  console.log(fs.readFileSync(licensePath, "utf8") + "\n");
+} else {
+  console.warn("⚠ LICENSE tidak ditemukan.");
+}
 
-['session', 'temp'].forEach(d => {
-  const dir = path.join(__dirname, d);
-  fs.existsSync(dir) || fs.mkdirSync(dir, { recursive: !0 });
+// Pastikan folder session & temp ada
+["session", "temp"].forEach((dir) => {
+  const full = path.join(__dirname, dir);
+  if (!fs.existsSync(full)) fs.mkdirSync(full, { recursive: true });
 });
 
-const downloadAndSave = (url, dest) => new Promise((resolve, reject) => {
-  const file = fs.createWriteStream(dest);
-  https.get(url, res => {
-    if (res.statusCode !== 200) return reject(new Error(`Status code: ${res.statusCode}`));
-    res.pipe(file).on('finish', () => file.close(resolve));
-  }).on('error', err => {
-    fs.existsSync(dest) && fs.unlinkSync(dest);
-    reject(err);
-  });
-});
+// Fungsi download dengan timeout & fallback
+const downloadAndSave = (url, dest, timeout = 15000) => {
+  return new Promise((resolve, reject) => {
+    const file = fs.createWriteStream(dest);
+    const request = https.get(url, (res) => {
+      if (res.statusCode !== 200) {
+        file.close();
+        fs.unlinkSync(dest, { force: true });
+        return reject(new Error(`Status code: ${res.statusCode}`));
+      }
+      res.pipe(file).on("finish", () => file.close(resolve));
+    });
 
-const start = () => {
-  const child = fork(
-    path.join(__dirname, 'main.js'),
-    process.argv.slice(2),
-    { stdio: ['inherit', 'inherit', 'inherit', 'ipc'] }
-  );
+    // Timeout
+    request.setTimeout(timeout, () => {
+      request.destroy(new Error("Request timeout"));
+      reject(new Error("Download timeout"));
+    });
 
-  child.on('message', msg => {
-    if (msg === 'reset') console.log('Restarting...'), child.kill();
-    else msg === 'uptime' && child.send(process.uptime());
-  });
-
-  child.on('exit', code => {
-    console.log('Exited with code:', code);
-    start();
+    request.on("error", (err) => {
+      fs.existsSync(dest) && fs.unlinkSync(dest);
+      reject(err);
+    });
   });
 };
 
-const remoteURL = 'https://raw.githubusercontent.com/MaouDabi0/Dabi-Ai-Documentation/main/setCfg.js',
-      localFile = path.join(__dirname, 'session', 'setCfg.js');
-
-downloadAndSave(remoteURL, localFile)
-  .then(() => import(pathToFileURL(localFile).href).then(start))
-  .catch(err => {
-    console.error('Gagal memuat kode remote:', err);
-    console.error('Tidak menjalankan start().');
+// Start child process
+const startBot = () => {
+  const child = fork(path.join(__dirname, "main.js"), process.argv.slice(2), {
+    stdio: ["inherit", "inherit", "inherit", "ipc"],
   });
+
+  // Handle messages from child
+  child.on("message", (msg) => {
+    if (msg === "reset") {
+      console.info("🔄 Restarting...");
+      child.kill();
+    } else if (msg === "uptime") {
+      child.send(process.uptime());
+    }
+  });
+
+  // Restart logic with delay
+  child.on("exit", (code) => {
+    console.warn(`Child exited with code ${code}. Restarting in 5s...`);
+    setTimeout(() => startBot(), 5000);
+  });
+};
+
+// URL konfigurasi remote
+const remoteURL =
+  "https://raw.githubusercontent.com/MaouDabi0/Dabi-Ai-Documentation/main/setCfg.js";
+const localFile = path.join(__dirname, "session", "setCfg.js");
+
+// Download dengan retry sekali
+(async () => {
+  try {
+    await downloadAndSave(remoteURL, localFile);
+    console.log("✔ Remote config berhasil diunduh.");
+    await import(pathToFileURL(localFile).href);
+    startBot();
+  } catch (error) {
+    console.error("❌ Gagal memuat remote config:", error.message);
+    console.warn("⚠ Lanjut menjalankan bot tanpa config remote.");
+    startBot();
+  }
+})();
